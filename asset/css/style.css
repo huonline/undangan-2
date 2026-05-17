@@ -81,3 +81,79 @@ body {
         transform: translate3d(-400px, 0, 0); 
     }
 }
+
+
+
+
+/* ==========================================================================
+   FIGURA EMAS KUBAH & ORNAMEN BATIK
+   ========================================================================== */
+.frame-dome-gold {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2;
+    pointer-events: none; /* Biar gak ngeblok tombol saat diklik */
+    
+    /* Membuat bentuk lengkungan Kubah Masjid di bagian atas */
+    border-top-left-radius: 50% 35%;
+    border-top-right-radius: 50% 35%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+    /* Garis Bingkai Emas Premium (Menggunakan Gradient) */
+    border: 2px solid transparent;
+    background-image: linear-gradient(#0a1128, #0a1128), 
+                      linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    
+    /* Efek Bayangan Glow Emas Lembut */
+    box-shadow: inset 0 0 15px rgba(191, 149, 63, 0.2), 0 0 20px rgba(191, 149, 63, 0.15);
+}
+
+/* Base untuk Ornaments di Sudut Figura */
+.ornament-corner {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.85;
+}
+
+/* Desain Ornamen Batik Menggunakan SVG Inline (Warna Emas #bf953f) */
+.top-left {
+    top: 10px;
+    left: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0,0 Q50,0 50,50 Q0,50 0,0 M20,20 Q40,20 40,40 Q20,40 20,20' fill='none' stroke='%23bf953f' stroke-width='2'/%3E%3Ccircle cx='15' cy='15' r='3' fill='%23fcf6ba'/%3E%3C/svg%3E");
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+    transform: scaleX(-1);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0,0 Q50,0 50,50 Q0,50 0,0 M20,20 Q40,20 40,40 Q20,40 20,20' fill='none' stroke='%23bf953f' stroke-width='2'/%3E%3Ccircle cx='15' cy='15' r='3' fill='%23fcf6ba'/%3E%3C/svg%3E");
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+    transform: scaleY(-1);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0,0 Q50,0 50,50 Q0,50 0,0 M20,20 Q40,20 40,40 Q20,40 20,20' fill='none' stroke='%23bf953f' stroke-width='2'/%3E%3Ccircle cx='15' cy='15' r='3' fill='%23fcf6ba'/%3E%3C/svg%3E");
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+    transform: scale(-1);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0,0 Q50,0 50,50 Q0,50 0,0 M20,20 Q40,20 40,40 Q20,40 20,20' fill='none' stroke='%23bf953f' stroke-width='2'/%3E%3Ccircle cx='15' cy='15' r='3' fill='%23fcf6ba'/%3E%3C/svg%3E");
+}
+
+/* Sesuaikan Z-Index Konten Utama agar di atas bingkai namun tetap rapi */
+.cover-content-container {
+    z-index: 3;
+    padding: 40px; /* Jarak aman agar teks tidak menabrak bingkai */
+}
