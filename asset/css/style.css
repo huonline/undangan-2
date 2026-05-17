@@ -50,35 +50,24 @@ body {
 }
 
 /* Lapisan Bintang Menggunakan Efek Dot/Radial */
+/* Lapisan Bintang yang Diperbesar */
 .bg-animated-stars {
     position: absolute;
-    width: 200%; /* Dibuat lebih lebar untuk kebutuhan animasi berjalan */
+    width: 200%; 
     height: 100%;
+    /* Mengubah ukuran dot radial-gradient agar bintang lebih besar (dari 1px-2px menjadi 2px-3.5px) */
     background-image: 
-        radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 40px 70px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 90px 150px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 150px 80px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 250px 200px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 300px 50px, #fff, rgba(0,0,0,0));
-    background-size: 400px 400px; /* Ukuran pengulangan pola bintang */
-    opacity: 0.6;
+        radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 150px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(3.5px 3.5px at 150px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 250px 200px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 300px 50px, #fff, rgba(0,0,0,0));
+    background-size: 400px 400px; 
+    opacity: 0.7; /* Sedikit dinaikkan agar lebih jelas terlihat */
     
-    /* Memanggil animasi bintang berjalan pelan */
-    animation: bintangBerjalan 60s linear infinite;
-}
-
-/* Container untuk Konten Utama agar berada di atas background */
-.cover-content-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
+    /* Durasi dipercepat dari 60s menjadi 25s */
+    animation: bintangBerjalan 25s linear infinite;
 }
 
 /* ==========================================================================
@@ -89,7 +78,6 @@ body {
         transform: translate3d(0, 0, 0);
     }
     100% {
-        /* Menggeser background ke kiri secara halus */
         transform: translate3d(-400px, 0, 0); 
     }
 }
