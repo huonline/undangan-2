@@ -108,49 +108,44 @@ body {
     box-shadow: inset 0 0 15px rgba(191, 149, 63, 0.3), 0 0 20px rgba(191, 149, 63, 0.2);
 }
 
-/* Base untuk Ornamen Sudut (Ukuran Diperbesar) */
+/* ==========================================================================
+   REVISI: ORNAMEN BUNGA EMAS LUXURY (CONDONG KE TENGAH)
+   ========================================================================== */
 .ornament-corner {
     position: absolute;
-    width: 90px;  /* Diperbesar agar dekorasinya menonjol */
-    height: 90px;
+    width: 85px;  /* Ukuran proporsional untuk dekorasi bunga */
+    height: 85px;
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 4;
+    
+    /* 1 KODE SVG UNTUK SEMUA: Desain kelopak bunga mawar/lotus mewah dengan kombinasi warna emas */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C!-- Kelopak Daun/Garis Sulur Luar --%3E%3Cpath d='M50,95 C15,75 20,40 35,45 C10,30 35,10 50,35 C65,10 90,30 65,45 C80,40 85,75 50,95 Z' fill='%23bf953f' stroke='%23fcf6ba' stroke-width='1'/%3E%3C!-- Kelopak Bunga Utama di Tengah --%3E%3Cpath d='M50,45 C35,55 42,80 50,95 C58,80 65,55 50,45 Z' fill='%23d4af37' stroke='%23ffffff' stroke-width='0.8'/%3E%3C!-- Detail Serat Emas Inti Bunga --%3E%3Cpath d='M30,65 Q50,55 70,65 M35,75 Q50,65 65,75' fill='none' stroke='%23fcf6ba' stroke-width='1'/%3E%3Ccircle cx='50' cy='45' r='3' fill='%23ffffff'/%3E%3C/svg%3E");
 }
 
-/* 
-   SVG Ornamen: Bentuk Kubah Emas/Kerucut Lancip (Puncak) 
-   yang dipadukan dengan kelopak bunga/daun sulur di bagian bawahnya.
+/* Mengatur posisi di pojok dan memutar arah bunga (rotate) 
+   agar semuanya condong/miring tepat menghadap ke pusat tengah undangan
 */
 .top-left {
-    top: -20px; /* Sengaja dikeluarkan sedikit agar menumpuk di pojok tali rantai */
-    left: -20px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C!-- Bentuk Kubah Kerucut Lancip --%3E%3Cpath d='M20,20 C20,20 35,5 50,0 C65,5 80,20 80,20 C80,20 70,45 50,50 C30,45 20,20 20,20 Z' fill='%23bf953f' stroke='%23fcf6ba' stroke-width='1'/%3E%3C!-- Detail Daun/Bunga Dekoratif di dasar kubah --%3E%3Cpath d='M10,40 Q30,45 50,25 Q70,45 90,40 C85,65 65,85 50,90 C35,85 15,65 10,40 Z' fill='%23b38728' stroke='%23fbf5b7' stroke-width='1'/%3E%3Cpath d='M30,40 C40,55 50,55 50,80 C50,55 60,55 70,40' fill='none' stroke='%23ffffff' stroke-width='1.5'/%3E%3Ccircle cx='50' cy='25' r='3' fill='%23ffffff'/%3E%3C/svg%3E");
+    top: -15px;
+    left: -15px;
+    transform: rotate(135deg); /* Miring ke kanan bawah */
 }
 
 .top-right {
-    top: -20px;
-    right: -20px;
-    transform: scaleX(-1);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20,20 C20,20 35,5 50,0 C65,5 80,20 80,20 C80,20 70,45 50,50 C30,45 20,20 20,20 Z' fill='%23bf953f' stroke='%23fcf6ba' stroke-width='1'/%3E%3Cpath d='M10,40 Q30,45 50,25 Q70,45 90,40 C85,65 65,85 50,90 C35,85 15,65 10,40 Z' fill='%23b38728' stroke='%23fbf5b7' stroke-width='1'/%3E%3Cpath d='M30,40 C40,55 50,55 50,80 C50,55 60,55 70,40' fill='none' stroke='%23ffffff' stroke-width='1.5'/%3E%3Ccircle cx='50' cy='25' r='3' fill='%23ffffff'/%3E%3C/svg%3E");
+    top: -15px;
+    right: -15px;
+    transform: rotate(-135deg); /* Miring ke kiri bawah */
 }
 
 .bottom-left {
-    bottom: -20px;
-    left: -20px;
-    transform: scaleY(-1);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20,20 C20,20 35,5 50,0 C65,5 80,20 80,20 C80,20 70,45 50,50 C30,45 20,20 20,20 Z' fill='%23bf953f' stroke='%23fcf6ba' stroke-width='1'/%3E%3Cpath d='M10,40 Q30,45 50,25 Q70,45 90,40 C85,65 65,85 50,90 C35,85 15,65 10,40 Z' fill='%23b38728' stroke='%23fbf5b7' stroke-width='1'/%3E%3Cpath d='M30,40 C40,55 50,55 50,80 C50,55 60,55 70,40' fill='none' stroke='%23ffffff' stroke-width='1.5'/%3E%3Ccircle cx='50' cy='25' r='3' fill='%23ffffff'/%3E%3C/svg%3E");
+    bottom: -15px;
+    left: -15px;
+    transform: rotate(45deg); /* Miring ke kanan atas */
 }
 
 .bottom-right {
-    bottom: -20px;
-    right: -20px;
-    transform: scale(-1);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20,20 C20,20 35,5 50,0 C65,5 80,20 80,20 C80,20 70,45 50,50 C30,45 20,20 20,20 Z' fill='%23bf953f' stroke='%23fcf6ba' stroke-width='1'/%3E%3Cpath d='M10,40 Q30,45 50,25 Q70,45 90,40 C85,65 65,85 50,90 C35,85 15,65 10,40 Z' fill='%23b38728' stroke='%23fbf5b7' stroke-width='1'/%3E%3Cpath d='M30,40 C40,55 50,55 50,80 C50,55 60,55 70,40' fill='none' stroke='%23ffffff' stroke-width='1.5'/%3E%3Ccircle cx='50' cy='25' r='3' fill='%23ffffff'/%3E%3C/svg%3E");
-}
-
-/* Sesuaikan area konten agar aman di dalam bingkai tali rantai */
-.cover-content-container {
-    z-index: 3;
-    padding: 60px 40px; 
+    bottom: -15px;
+    right: -15px;
+    transform: rotate(-45deg); /* Miring ke kiri atas */
 }
