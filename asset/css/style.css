@@ -273,9 +273,9 @@ body{
 
 .couple-man{
   position: absolute;
-
   top: 0;
-  left: 0;
+  left: -12px;
+  right:160px;
 }
 
 
@@ -285,6 +285,8 @@ body{
   position: absolute;
 
   right: 0;
+  
+  left:130px;
   bottom: 0;
 }
 
@@ -310,7 +312,7 @@ body{
 .couple-name{
   font-family: 'Cormorant Garamond', serif;
 
-  font-size: 24px; /* ukuran nama */
+  font-size: 30px; /* ukuran nama */
 
   font-weight: 500;
 
