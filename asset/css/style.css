@@ -72,20 +72,21 @@ body {
 }
 
 /* ==========================================================================
-   KONSTRUKSI FIGURA BENTUK KUBAH MASJID (PREMIUM)
+   KONSTRUKSI FIGURA MELENGKUNG SETENGAH LINGKARAN (ARCH DOME)
    ========================================================================== */
 .avatar-mosque-gold {
     position: relative;
     width: 160px;
-    height: 200px; /* Dibuat sedikit lebih tinggi agar proporsi kubahnya pas */
+    height: 220px; /* Diatur agak tinggi agar proporsi lengkungan atas ke bawah pas */
     padding: 5px;  /* Ketebalan list/bingkai emas */
     
     /* Efek Gradasi Emas untuk Bingkai */
     background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
     
-    /* Memotong bingkai luar menjadi bentuk kubah masjid */
-    clip-path: polygon(50% 0%, 85% 25%, 100% 55%, 100% 100%, 0% 100%, 0% 55%, 15% 25%);
-    filter: drop-shadow(0px 6px 15px rgba(0, 0, 0, 0.6));
+    /* Membuat atas melengkung mulus (setengah lingkaran) dan bawahnya kotak */
+    border-radius: 80px 80px 0 0; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    overflow: visible; /* Biar bunga di bawah tidak terpotong */
 }
 
 .mosque-clip-container {
@@ -93,9 +94,9 @@ body {
     height: 100%;
     background-color: #050c1e; /* Warna dasar jika gambar belum termuat */
     
-    /* Memotong gambar foto di dalam agar ikut melengkung seperti kubah masjid */
-    clip-path: polygon(50% 0%, 84% 24%, 99% 54%, 99% 99%, 1% 99%, 1% 54%, 16% 24%);
-    overflow: hidden;
+    /* Menyamakan lengkungan wadah dalam dengan bingkai luar */
+    border-radius: 75px 75px 0 0; 
+    overflow: hidden; /* Memotong foto pasangan agar ikut melengkung di atas */
 }
 
 .pair-photo {
@@ -105,7 +106,7 @@ body {
     display: block;
 }
 
-/* Peletakan Bunga Aksentuasi di Kiri Bawah Figura Masjid */
+/* Peletakan Bunga Aksentuasi di Kiri Bawah Figura */
 .flower-avatar-accent {
     position: absolute;
     width: 80px;
@@ -115,6 +116,7 @@ body {
     z-index: 5;
     filter: drop-shadow(3px 5px 6px rgba(0,0,0,0.6));
 }
+
 
 /* 3. Teks Nama Pasangan (Font ALGERIAN) */
 .couple-names {
