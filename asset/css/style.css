@@ -72,17 +72,23 @@ body {
 }
 
 /* ==========================================================================
-   GAYA FOTO PASANGAN MURNI (TANPA FIGURA)
+   FOTO LINGKARAN MURNI (UKURAN & POSISI TETAP, TANPA DEKORASI)
    ========================================================================== */
-.pair-photo-only {
-    width: 200px;      /* Atur lebar foto sesuai keinginanmu */
-    height: 250px;     /* Atur tinggi foto sesuai keinginanmu */
-    object-fit: cover; /* Biar foto tidak gepeng/ketarik */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Beri bayangan lembut biar estetik */
-    border-radius: 8px; /* Opsi tambahan: bikin sudut foto agak melengkung halus (bisa diganti 0 jika ingin kotak lancip) */
-    display: block;
+.avatar-pure-circle {
+    position: relative;
+    width: 160px;               /* Ukuran lingkaran kecil yang sama seperti awal */
+    height: 160px;              /* Tinggi sama agar bulat sempurna */
+    border-radius: 50%;         /* Membuat bentuk bulat lingkaran murni */
+    overflow: hidden;           /* Memotong foto di dalam agar otomatis ikut bulat */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Bayangan lembut agar foto tidak tenggelam di background */
 }
 
+.pair-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* Memastikan foto pasangan tidak gepeng */
+    display: block;
+}
 
 
 /* 3. Teks Nama Pasangan (Font ALGERIAN) */
