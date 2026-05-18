@@ -1,0 +1,125 @@
+/* ==========================================
+   STYLING SECTION AYAT
+   ========================================== */
+
+.ayat-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Background Navy & Glow Putih */
+.ayat-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0B1325; /* Navy Tua senada dengan heromu */
+  z-index: 1;
+}
+
+.glow-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(20px);
+}
+
+/* Kotak Emas Utama */
+.ayat-gold-box {
+  position: relative;
+  width: 100%;
+  max-width: 550px; /* Ukuran pas untuk HP dan Laptop */
+  border: 2px solid #d4af37; /* Garis emas */
+  border-radius: 12px;
+  padding: 50px 30px;
+  box-sizing: border-box;
+  background-color: rgba(11, 19, 37, 0.6); /* Transparan agar glow putih tembus */
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); /* Glow emas tipis di luar kotak */
+  z-index: 5;
+}
+
+/* Mengatur 4 Gambar Hiasan Sudut */
+.corner-decor {
+  position: absolute;
+  width: 70px; /* Atur ukuran hiasan bungamu di sini */
+  height: auto;
+  pointer-events: none;
+}
+
+.top-left {
+  top: 10px;
+  left: 10px;
+}
+
+.top-right {
+  top: 10px;
+  right: 10px;
+  transform: scaleX(-1); /* Balik horizontal */
+}
+
+.bottom-left {
+  bottom: 10px;
+  left: 10px;
+  transform: scaleY(-1); /* Balik vertikal */
+}
+
+.bottom-right {
+  bottom: 10px;
+  right: 10px;
+  transform: rotate(180deg); /* Putar balik total */
+}
+
+/* Konten Teks & Tipografi */
+.ayat-content {
+  text-align: center;
+  color: #f1f5f9;
+}
+
+.bismillah {
+  margin-bottom: 25px;
+}
+
+.bismillah img {
+  width: 150px; /* Ukuran bismillah kecil dan proporsional */
+  height: auto;
+  filter: invert(83%) sepia(47%) saturate(464%) hue-rotate(354deg) brightness(96%) contrast(90%); /* Trik CSS membuat gambar bismillah jadi warna emas */
+}
+
+.arabic-text {
+  font-family: 'Cormorant Garamond', serif; /* Font arab bawaan jika belum pasang font khusus arab */
+  font-size: 24px;
+  line-height: 2;
+  direction: rtl; /* Teks dibaca dari kanan ke kiri */
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.indonesian-translation {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.surah-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #d4af37; /* Warna emas untuk judul surah */
+  letter-spacing: 1px;
+}
