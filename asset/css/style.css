@@ -141,6 +141,17 @@ body{
   top: auto;
 }
 
+/* KODE BARU: Mengatur posisi bunga sebelah kanan atas */
+.flower-right {
+  top: 0;
+  right: 0;
+  /* Jika kamu menggunakan gambar yang sama dengan bunga kiri, 
+     kamu bisa membaliknya secara horizontal dengan kode di bawah ini: */
+  transform: scaleX(-1); 
+}
+
+
+
 
 .hero-flower img{
   width: 200px; /* ukuran bunga */
