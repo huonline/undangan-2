@@ -133,7 +133,25 @@
     </div>
 
   </section>
+
+
+
   
+ <!-- JAVASCRIPT UNTUK AKTIFKAN TOMBOL & ANIMASI -->
+  <script>
+    document.getElementById('btn-buka').addEventListener('click', function() {
+      // 1. Tambahkan class untuk memicu animasi buka gerbang di CSS
+      const hero = document.getElementById('hero');
+      hero.classList.add('buka-gerbang');
+
+      // 2. Scroll otomatis secara halus (smooth) ke Section Ayat
+      setTimeout(function() {
+        const sectionAyat = document.getElementById('ayat');
+        sectionAyat.scrollIntoView({ behavior: 'smooth' });
+      }, 300); // Menunggu 0.3 detik agar animasi gerbang mulai bergerak duluan
+    });
+  </script>
+</body> 
 
 </body>
 </html>
