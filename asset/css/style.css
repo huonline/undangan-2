@@ -33,19 +33,6 @@ body {
     z-index: 1; /* Berada di paling bawah */
 }
 
-/* Figura Rantai Emas Siku Kotak Segi Empat */
-.frame-dome-gold {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    z-index: 2; /* Di atas gambar background */
-    pointer-events: none;
-    border: 8px solid transparent;
-    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath d='M0,15 Q5,5 15,15 T30,15' fill='none' stroke='%23bf953f' stroke-width='2.5'/%3E%3Cpath d='M0,15 Q5,25 15,15 T30,15' fill='none' stroke='%23fcf6ba' stroke-width='1.5'/%3E%3C/svg%3E") 10 repeat;
-    box-shadow: inset 0 0 20px rgba(191, 149, 63, 0.25);
-}
 
 /* ==========================================================================
    VERTICAL ALIGNMENT CONTENT (URUTAN DOWNWARD DENGAN FONT ALGERIAN)
