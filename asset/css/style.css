@@ -1,145 +1,242 @@
-/* ==========================================================================
-   RESET & SYSTEM BASIS SYSTEM 
-   ========================================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    overflow-x: hidden;
-    background-color: #050c1e;
-}
-
-/* ==========================================================================
-   MAIN HERO COVER LAYOUT
-   ========================================================================== */
-#hero-cover {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-/* Mengatur gambar background dari HTML agar memenuhi layar penuh */
-.main-bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1; /* Berada di paling bawah */
+body{
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
 }
 
 
-/* ==========================================================================
-   VERTICAL ALIGNMENT CONTENT (URUTAN DOWNWARD DENGAN FONT ALGERIAN)
-   ========================================================================== */
-.cover-content-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 3; /* Di atas background dan bingkai */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly; 
-    align-items: center;
-    padding: 50px 30px;
-    text-align: center;
-    color: #ffffff;
-}
+/* =========================
+   HERO SECTION
+========================= */
 
-/* 1. Kelompok Teks Pembuka (Font ALGERIAN) */
-.cover-welcome {
-    font-family: 'Algerian', 'Georgia', serif;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #fcf6ba;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
+.hero-section{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
 
-.cover-subtitle {
-    font-family: 'Algerian', 'Georgia', serif;
-    font-size: 26px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #ffffff;
-    margin-top: 5px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-/* ==========================================================================
-   FOTO LINGKARAN MURNI (UKURAN & POSISI TETAP, TANPA DEKORASI)
-   ========================================================================== */
-.avatar-pure-circle {
-    position: relative;
-    width: 160px;               /* Ukuran lingkaran kecil yang sama seperti awal */
-    height: 160px;              /* Tinggi sama agar bulat sempurna */
-    border-radius: 50%;         /* Membuat bentuk bulat lingkaran murni */
-    overflow: hidden;           /* Memotong foto di dalam agar otomatis ikut bulat */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Bayangan lembut agar foto tidak tenggelam di background */
-}
-
-.pair-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;          /* Memastikan foto pasangan tidak gepeng */
-    display: block;
+  padding: 40px 20px;
 }
 
 
-/* 3. Teks Nama Pasangan (Font ALGERIAN) */
-.couple-names {
-    font-family: 'Algerian', 'Georgia', serif;
-    font-size: 32px;
-    color: #fcf6ba;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+/* =========================
+   BACKGROUND
+========================= */
+
+.hero-background{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
-/* 4. Teks Penanda Tanggal / Waktu (Font ALGERIAN) */
-.date-wrapper {
-    margin: 2px 0;
+.hero-background img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transform: scale(1.05);
 }
 
-.text-save-date {
-    font-family: 'Algerian', 'Georgia', serif;
-    font-size: 18px;
-    letter-spacing: 4px;
-    color: #ffffff;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+.hero-blur{
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
 }
 
-.text-exact-date {
-    font-family: 'Algerian', 'Georgia', serif;
-    font-size: 22px;
-    color: #bf953f;
-    margin-top: 8px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+
+/* =========================
+   CONTENT
+========================= */
+
+.hero-content{
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 450px;
+
+  text-align: center;
 }
 
-/* 5. Tombol Interaksi Buka Undangan */
-.btn-open-invitation {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 13px 40px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    color: #050c1e;
-    background: linear-gradient(135deg, #fcf6ba 0%, #bf953f 100%);
-    box-shadow: 0 4px 15px rgba(191, 149, 63, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+/* =========================
+   TOP TEXT
+========================= */
+
+.hero-top{
+  margin-bottom: 90px;
 }
 
-.btn-open-invitation:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(191, 149, 63, 0.7);
+.hero-welcome{
+  font-size: 15px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  margin-bottom: 12px;
+
+  opacity: 0.9;
+}
+
+.hero-title{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+
+/* =========================
+   COUPLE
+========================= */
+
+.hero-couple{
+  position: relative;
+
+  width: 100%;
+  min-height: 220px;
+
+  margin-bottom: 90px;
+}
+
+.couple-man{
+  position: absolute;
+
+  top: 0;
+  left: 0;
+}
+
+.couple-woman{
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+}
+
+.couple-center{
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  font-size: 60px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.couple-name{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.hero-bottom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.save-text{
+  font-size: 15px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+
+  margin-bottom: 18px;
+}
+
+.wedding-date{
+  margin-bottom: 30px;
+}
+
+.wedding-date h3{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 62px;
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+.wedding-date span{
+  display: block;
+
+  margin-top: 10px;
+
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.open-invitation{
+  border: none;
+  outline: none;
+
+  padding: 14px 32px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.15);
+
+  color: #fff;
+
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  backdrop-filter: blur(10px);
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.open-invitation:hover{
+  background: rgba(255,255,255,0.25);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 480px){
+
+  .hero-title{
+    font-size: 44px;
+  }
+
+  .couple-name{
+    font-size: 38px;
+  }
+
+  .couple-center{
+    font-size: 50px;
+  }
+
+  .wedding-date h3{
+    font-size: 54px;
+  }
+
 }
