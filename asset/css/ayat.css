@@ -67,26 +67,26 @@
 }
 
 .top-left {
-  top: 10px;
-  left: 10px;
+  top: 1px;
+  left: 1px;
   transform: rotate(-90deg);
   z-index: 1; /* Diperbaiki dari 1px menjadi 1 */
 }
 
 .top-right {
-  top: 10px;
-  right: 10px;
+  top: 1px;
+  right: 1px;
 }
 
 .bottom-left {
-  bottom: 10px;
-  left: 2px;
+  bottom: 1px;
+  left: 1px;
   transform: rotate(-180deg); /* Ditambah titik koma (;) */
 }
 
 .bottom-right {
-  bottom: 10px;
-  right: 2px;
+  bottom: 1px;
+  right: 1px;
   transform: rotate(90deg); /* Ditambah titik koma (;) */
 }
 
