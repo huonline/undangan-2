@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RESET & BASE STYLES
+   RESET & SYSTEM BASIS SYSTEM 
    ========================================================================== */
 * {
     margin: 0;
@@ -9,11 +9,11 @@
 
 body {
     overflow-x: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #050c1e;
 }
 
 /* ==========================================================================
-   SECTION 1: HERO COVER
+   MAIN HERO COVER LAYOUT
    ========================================================================== */
 #hero-cover {
     position: relative;
@@ -22,126 +22,147 @@ body {
     overflow: hidden;
 }
 
-/* Wrapper untuk menumpuk efek background */
-.cover-background-wrapper {
+/* Mengatur gambar background dari HTML agar memenuhi layar penuh */
+.main-bg-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    object-fit: cover;
+    z-index: 1; /* Berada di paling bawah */
 }
 
-/* Base Warna Biru Navy Premium dengan Gradient */
-.bg-navy-base {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #0a1128 0%, #101f42 50%, #050c1e 100%);
-}
-
-/* Efek Pendaran Cahaya (Glow) di Tengah/Samping */
-.bg-light-glow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 40%, rgba(0, 119, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-    mix-blend-mode: screen;
-}
-
-/* Lapisan Bintang Menggunakan Efek Dot/Radial */
-/* Lapisan Bintang yang Diperbesar */
-.bg-animated-stars {
-    position: absolute;
-    width: 200%; 
-    height: 100%;
-    /* Mengubah ukuran dot radial-gradient agar bintang lebih besar (dari 1px-2px menjadi 2px-3.5px) */
-    background-image: 
-        radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 40px 70px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 90px 150px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(3.5px 3.5px at 150px 80px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2.5px 2.5px at 250px 200px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 300px 50px, #fff, rgba(0,0,0,0));
-    background-size: 400px 400px; 
-    opacity: 0.7; /* Sedikit dinaikkan agar lebih jelas terlihat */
-    
-    /* Durasi dipercepat dari 60s menjadi 25s */
-    animation: bintangBerjalan 25s linear infinite;
-}
-
-/* ==========================================================================
-   ANIMATION KEYFRAMES
-   ========================================================================== */
-@keyframes bintangBerjalan {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        transform: translate3d(-400px, 0, 0); 
-    }
-}
-
-
-
-
-/* ==========================================================================
-   REVISI: FIGURA KOTAK TALI RANTAI & ORNAMEN KUBAH/FLORAL BESAR
-   ========================================================================== */
+/* Figura Rantai Emas Siku Kotak Segi Empat */
 .frame-dome-gold {
     position: absolute;
-    top: 25px;
-    left: 25px;
-    right: 25px;
-    bottom: 25px;
-    z-index: 2;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2; /* Di atas gambar background */
     pointer-events: none;
-    
-    /* Mengembalikan bentuk menjadi KOTAK sempurna */
-    border-radius: 4px; 
-    
-    /* Efek Garis Tali Rantai/Gelombang Emas menggunakan SVG border-image */
-    border: 10px solid transparent;
+    border: 8px solid transparent;
     border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath d='M0,15 Q5,5 15,15 T30,15' fill='none' stroke='%23bf953f' stroke-width='2.5'/%3E%3Cpath d='M0,15 Q5,25 15,15 T30,15' fill='none' stroke='%23fcf6ba' stroke-width='1.5'/%3E%3C/svg%3E") 10 repeat;
-    
-    /* Efek Bayangan Glow Emas di sekeliling bingkai */
-    box-shadow: inset 0 0 15px rgba(191, 149, 63, 0.3), 0 0 20px rgba(191, 149, 63, 0.2);
+    box-shadow: inset 0 0 20px rgba(191, 149, 63, 0.25);
 }
 
-
 /* ==========================================================================
-   PENGATURAN ORNAMEN GAMBAR PNG (CONDONG KE TENGAH)
+   VERTICAL ALIGNMENT CONTENT (URUTAN DOWNWARD DENGAN FONT ALGERIAN)
    ========================================================================== */
-.ornament-corner {
-    position: absolute;
-    width: 85px;       /* Atur besar ukuran gambar bunga di sini */
-    height: auto;      /* Biar tinggi gambar proporsional mengikuti lebar */
-    z-index: 4;
+.cover-content-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 3; /* Di atas background dan bingkai */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+    align-items: center;
+    padding: 50px 30px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* 1. Kelompok Teks Pembuka (Font ALGERIAN) */
+.cover-welcome {
+    font-family: 'Algerian', 'Georgia', serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fcf6ba;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.cover-subtitle {
+    font-family: 'Algerian', 'Georgia', serif;
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-top: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* 2. Konstruksi Figura Bulat Emas */
+.avatar-circle-gold {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.pair-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
     display: block;
 }
 
-/* Mengatur posisi sudut dan memutar (rotate) gambar PNG 
-   agar semuanya miring/condong pas menghadap ke pusat tengah */
-.top-left {
-    top: -15px;
-    left: -15px;
-    transform: rotate(135deg); 
+/* Peletakan Bunga Aksentuasi di Kiri Bawah Figura Bulat */
+.flower-avatar-accent {
+    position: absolute;
+    width: 75px;
+    height: auto;
+    left: -20px;
+    bottom: -5px;
+    z-index: 5;
+    filter: drop-shadow(3px 5px 6px rgba(0,0,0,0.6));
 }
 
-.top-right {
-    top: -15px;
-    right: -15px;
-    transform: rotate(-135deg); 
+/* 3. Teks Nama Pasangan (Font ALGERIAN) */
+.couple-names {
+    font-family: 'Algerian', 'Georgia', serif;
+    font-size: 32px;
+    color: #fcf6ba;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
 }
 
-.bottom-left {
-    bottom: -15px;
-    left: -15px;
-    transform: rotate(45deg); 
+/* 4. Teks Penanda Tanggal / Waktu (Font ALGERIAN) */
+.date-wrapper {
+    margin: 2px 0;
 }
 
-.bottom-right {
-    bottom: -15px;
-    right: -15px;
-    transform: rotate(-45deg); 
+.text-save-date {
+    font-family: 'Algerian', 'Georgia', serif;
+    font-size: 18px;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.text-exact-date {
+    font-family: 'Algerian', 'Georgia', serif;
+    font-size: 22px;
+    color: #bf953f;
+    margin-top: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* 5. Tombol Interaksi Buka Undangan */
+.btn-open-invitation {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 13px 40px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #050c1e;
+    background: linear-gradient(135deg, #fcf6ba 0%, #bf953f 100%);
+    box-shadow: 0 4px 15px rgba(191, 149, 63, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-open-invitation:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(191, 149, 63, 0.7);
 }
