@@ -245,8 +245,8 @@ body{
 
 /* KODE BARU: Mengatur posisi bunga sebelah kanan atas */
 .flower-right {
-  top: 1px;
-  right: -23px;
+top: -8px;
+  right: 1px;
   /* Jika kamu menggunakan gambar yang sama dengan bunga kiri, 
      kamu bisa membaliknya secara horizontal dengan kode di bawah ini: */
   transform: rotate(180deg); 
