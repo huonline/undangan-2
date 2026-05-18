@@ -20,16 +20,19 @@ html, body {
 ========================= */
 
 .hero-section {
-  position: relative;
+  position: relative; /* Jangan dihapus, penting untuk fixed saat buka gerbang */
   width: 100%;
-  min-height: 100vh;
+  
+  /* KODE BARU: Solusi ampuh agar pas selayar HP tanpa scroll */
+  min-height: 100vh; /* Fallback untuk browser lama */
+  min-height: 100dvh; /* Ukuran dinamis mengikuti layar asli HP */
+  
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 25px 20px;
+  padding: 20px 15px; /* Padding sedikit dikecilkan agar konten tidak terlalu menekan ke bawah */
 }
-
 /* =========================
    BACKGROUND
 ========================= */
@@ -133,15 +136,15 @@ html, body {
 
 /* posisi bunga kiri bawah */
 .flower-left {
-  bottom: -1px;
-  left: 1px;
+  bottom: 15px; /* Ditarik agak ke atas agar aman dari ujung bawah layar */
+  left: 0;
   top: auto;
 }
 
 /* posisi bunga kanan atas */
 .flower-right {
-  top: -8px;
-  right: 1px;
+  top: 10px; /* Ditarik agak ke bawah agar menjauh dari ujung atas layar */
+  right: 0;
   transform: rotate(180deg); 
   z-index: 10;
 }
