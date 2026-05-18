@@ -525,3 +525,81 @@ body{
 .open-invitation:hover{
   transform: translateY(-2px);
 }
+
+
+/* ==========================================
+   EFEK ANIMASI BUKA GERBANG (HERO)
+   ========================================== */
+
+.hero-section {
+  position: fixed; /* Ubah ke fixed agar saat gerbang terbuka, dia tidak memakan space scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999; /* Memastikan hero menutupi section ayat sebelum dibuka */
+  overflow: hidden;
+  transition: visibility 1.5s; /* Menghilangkan section setelah animasi selesai */
+}
+
+/* Base style untuk panel gerbang */
+.gate-panel {
+  position: absolute;
+  top: 0;
+  width: 50%; /* Membagi layar menjadi 2 (kiri & kanan) */
+  height: 100%;
+  background-color: #0B1325; /* Warna Navy dasar gerbang */
+  transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1); /* Gerakan transisi halus */
+  overflow: hidden;
+}
+
+.gate-left {
+  left: 0;
+  border-right: 1px solid rgba(214, 175, 55, 0.2); /* Garis emas tipis di tengah pertemuan gerbang */
+}
+
+.gate-right {
+  right: 0;
+  border-left: 1px solid rgba(214, 175, 55, 0.2);
+}
+
+/* Pastikan konten utama ikut memudar saat gerbang terbuka */
+.hero-content {
+  position: relative;
+  z-index: 1000;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* ------------------------------------------
+   CLASS TRIGGER (DIJALANKAN LEWAT JAVASCRIPT)
+   ------------------------------------------ */
+
+/* Gerbang Kiri Geser ke Kiri Luar Layar */
+.hero-section.buka-gerbang .gate-left {
+  transform: translateX(-100%);
+}
+
+/* Gerbang Kanan Geser ke Kanan Luar Layar */
+.hero-section.buka-gerbang .gate-right {
+  transform: translateX(100%);
+}
+
+/* Konten teks & foto memudar lalu menghilang */
+.hero-section.buka-gerbang .hero-content {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+/* Hilangkan total hero section dari layar setelah gerbang terbuka */
+.hero-section.buka-gerbang {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Berikan padding-top pada body agar Section Ayat tidak tertutup status fixed Hero */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0B1325;
+}
