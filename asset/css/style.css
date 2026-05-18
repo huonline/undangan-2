@@ -120,32 +120,27 @@ body{
   filter: blur(90px);
 }
 
-
-.star {
-  position: absolute;
-  background-color: #fff;
-  border-radius: 50%;
-  z-index: 1;
-  /* Membuat pendaran halus di sekitar bintang agar terlihat lebih nyata */
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); 
-  
-  /* PENTING: Memicu animasi bintangMajuKelapKelip */
-  animation: bintangMajuKelapKelip 8s infinite linear;
-}
-
 /* ==========================================
-   ANIMASI BINTANG EMAS DIAGONAL (CEPAT & KELAP-KELIP)
+   ANIMASI BINTANG EMAS DIAGONAL (SHARP & CEAPAT)
    ========================================== */
 
-/* Base style bintang emas */
+/* Base style bintang - BENTUK DIATUR DI SINI */
 .star {
   position: absolute;
-  color: #ffd700; /* Warna dasar Emas */
+  /* Warna dasar Emas */
+  background: #ffd700; 
   
-  /* Efek kilauan emas (Glow) */
-  text-shadow: 0 0 5px #fff, 0 0 10px #f39c12, 0 0 15px #d4af37; 
+  /* --- KODE UTAMA UNTUK BENTUK BINTANG TAJAM --- 
+     Menciptakan bintang segi empat yang tajam & simetris
+  */
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+
+  /* Efek kilauan emas yang kuat (di luar Clip-Path) */
+  box-shadow: 0 0 10px #f39c12, 0 0 20px #d4af37, 0 0 30px #ffffff;
   
-  font-family: serif;
+  /* Optional: Untuk memastikan pendaran box-shadow tidak terpotong 
+     (Kadang perlu pembungkus tambahan, tapi kita coba ini dulu) */
+  
   user-select: none;
   pointer-events: none;
   z-index: 1;
@@ -155,58 +150,63 @@ body{
   animation: bintangEmasMeluncur linear infinite;
 }
 
-/* Mengatur ukuran bintang dan durasi cepat yang bervariasi */
+/* Mengatur ukuran dan posisi asal (Kanan-Bawah) */
 .star-1 {
   bottom: 10%;
   right: 5%;
-  font-size: 14px;
-  animation-duration: 2.5s;
+  width: 15px; /* Menggunakan Width/Height sebagai ganti Font-Size */
+  height: 15px;
+  animation-duration: 2s; /* Sedikit dipercepat */
   animation-delay: 0s;
 }
 
 .star-2 {
   bottom: 25%;
   right: -5%;
-  font-size: 22px; /* Lebih besar */
-  animation-duration: 3.2s;
+  width: 25px;
+  height: 25px;
+  animation-duration: 2.8s;
   animation-delay: 0.8s;
 }
 
 .star-3 {
   bottom: -5%;
   right: 20%;
-  font-size: 12px;
-  animation-duration: 2s; /* Paling cepat */
+  width: 12px;
+  height: 12px;
+  animation-duration: 1.5s; /* Paling cepat */
   animation-delay: 1.5s;
 }
 
 .star-4 {
   bottom: 40%;
   right: -10%;
-  font-size: 18px;
-  animation-duration: 3.8s;
+  width: 20px;
+  height: 20px;
+  animation-duration: 3.2s;
   animation-delay: 0.3s;
 }
 
 .star-5 {
   bottom: 15%;
   right: 15%;
-  font-size: 16px;
-  animation-duration: 2.8s;
+  width: 18px;
+  height: 18px;
+  animation-duration: 2.2s;
   animation-delay: 2s;
 }
 
-/* --- LOGIK GERAKAN DIAGONAL & KEDIP --- 
-   Bergerak dari Kanan-Bawah (X positif, Y positif) menuju Kiri-Atas (X negatif, Y negatif)
+/* --- LOGIK GERAKAN DIAGONAL & KEDIP (TETAP SAMA, CEAPAT) --- 
+   Bergerak cepat dari Kanan-Bawah (-X, +Y) menuju Kiri-Atas (-X, -Y)
 */
 @keyframes bintangEmasMeluncur {
   0% {
     opacity: 0;
-    /* Mulai dari posisi asalnya di kanan bawah sambil berukuran kecil */
+    /* Mulai dari posisi asalnya di kanan bawah */
     transform: translate(0, 0) scale(0.4) rotate(0deg);
   }
   20% {
-    opacity: 1; /* Mulai berkedip terang */
+    opacity: 1; /* Berkedip terang */
   }
   40% {
     opacity: 0.4; /* Meredup sebentar */
@@ -219,8 +219,8 @@ body{
   }
   100% {
     opacity: 0; /* Menghilang halus di ujung tujuan */
-    /* Meluncur jauh ke arah kiri atas (-X dan -Y) sambil membesar dan berputar */
-    transform: translate(-600px, -600px) scale(1.3) rotate(180deg);
+    /* Meluncur jauh ke arah kiri atas (-X dan -Y) */
+    transform: translate(-700px, -700px) scale(1.1) rotate(120deg);
   }
 }
 
