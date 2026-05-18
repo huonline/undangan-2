@@ -1,57 +1,74 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan Premium</title>
-    <link rel="stylesheet" href="asset/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="asset/css/style.css"/>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- ========================================== -->
-    <!-- SECTION 1: HERO COVER                      -->
-    <!-- ========================================== -->
-    <section id="hero-cover">
-        
-        <!-- 1. MEMANGGIL FILE BACKGROUND UTAMA LEWAT SRC HTML -->
-        <img src="img/background1.jpg" alt="Background Utama" class="main-bg-image">
+  <!-- HERO -->
+  <section id="hero" class="hero-section">
 
-       
-
-        <!-- KONTEN UTAMA (Tertata Vertikal Kebawah di Atas Background) -->
-        <div class="cover-content-container">
-            
-            <!-- Elemen Teks Pembuka -->
-            <div class="header-text-group">
-                <h3 class="cover-welcome">Welcome to</h3>
-                <h1 class="cover-subtitle">The Wedding of</h1>
-            </div>
-            
-           <!-- FIGURA BENTUK MASJID UTAMA -->
-
-        
-            <!-- Foto Pasangan -->
-            <div class="avatar-pure-circle">
-        <img src="img/pasangan2.png" alt="Foto Pasangan" class="pair-photo">
+    <!-- Background -->
+    <div class="hero-background">
+      <img src="img/background.jpg" alt="Background Wedding">
+      <div class="hero-blur"></div>
     </div>
-    
-  
 
-            <!-- Teks Nama Pasangan -->
-            <h2 class="couple-names">Asep Ilyas & Ai Siti</h2>
-            
-            <!-- Blok Informasi Waktu Penyelenggaraan -->
-            <div class="date-wrapper">
-                <p class="text-save-date">Save The Date</p>
-                <p class="text-exact-date">Minggu, 07 Juni 2026</p>
-            </div>
+    <!-- Content -->
+    <div class="hero-content">
 
-            <!-- Tombol Interaksi Utama -->
-            <button class="btn-open-invitation">Buka Undangan</button>
+      <!-- Welcome -->
+      <div class="hero-top">
+        <p class="hero-welcome">Welcome To</p>
+        <h1 class="hero-title">The Wedding Of</h1>
+      </div>
 
+      <!-- Couple -->
+      <div class="hero-couple">
+
+        <div class="couple-man">
+          <h2 class="couple-name">Asep Ilyas</h2>
         </div>
 
-    </section>
+        <div class="couple-center">
+          <span>&</span>
+        </div>
+
+        <div class="couple-woman">
+          <h2 class="couple-name">Ai Siti Rahmawati</h2>
+        </div>
+
+      </div>
+
+      <!-- Save The Date -->
+      <div class="hero-bottom">
+
+        <p class="save-text">Save The Date</p>
+
+        <div class="wedding-date">
+          <h3>07</h3>
+          <span>Juni 2026</span>
+        </div>
+
+        <button class="open-invitation">
+          Buka Undangan
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
 
 </body>
 </html>
