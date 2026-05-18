@@ -72,50 +72,17 @@ body {
 }
 
 /* ==========================================================================
-   KONSTRUKSI FIGURA MELENGKUNG SETENGAH LINGKARAN (ARCH DOME)
+   GAYA FOTO PASANGAN MURNI (TANPA FIGURA)
    ========================================================================== */
-.avatar-mosque-gold {
-    position: relative;
-    width: 160px;
-    height: 220px; /* Diatur agak tinggi agar proporsi lengkungan atas ke bawah pas */
-    padding: 5px;  /* Ketebalan list/bingkai emas */
-    
-    /* Efek Gradasi Emas untuk Bingkai */
-    background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-    
-    /* Membuat atas melengkung mulus (setengah lingkaran) dan bawahnya kotak */
-    border-radius: 80px 80px 0 0; 
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
-    overflow: visible; /* Biar bunga di bawah tidak terpotong */
-}
-
-.mosque-clip-container {
-    width: 100%;
-    height: 100%;
-    background-color: #050c1e; /* Warna dasar jika gambar belum termuat */
-    
-    /* Menyamakan lengkungan wadah dalam dengan bingkai luar */
-    border-radius: 75px 75px 0 0; 
-    overflow: hidden; /* Memotong foto pasangan agar ikut melengkung di atas */
-}
-
-.pair-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.pair-photo-only {
+    width: 200px;      /* Atur lebar foto sesuai keinginanmu */
+    height: 250px;     /* Atur tinggi foto sesuai keinginanmu */
+    object-fit: cover; /* Biar foto tidak gepeng/ketarik */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Beri bayangan lembut biar estetik */
+    border-radius: 8px; /* Opsi tambahan: bikin sudut foto agak melengkung halus (bisa diganti 0 jika ingin kotak lancip) */
     display: block;
 }
 
-/* Peletakan Bunga Aksentuasi di Kiri Bawah Figura */
-.flower-avatar-accent {
-    position: absolute;
-    width: 80px;
-    height: auto;
-    left: -20px;
-    bottom: -10px;
-    z-index: 5;
-    filter: drop-shadow(3px 5px 6px rgba(0,0,0,0.6));
-}
 
 
 /* 3. Teks Nama Pasangan (Font ALGERIAN) */
