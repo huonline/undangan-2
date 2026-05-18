@@ -2,54 +2,47 @@
    GLOBAL
 ========================= */
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+html, body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   background: #07111f;
   color: #ffffff;
 }
 
-
 /* =========================
    HERO SECTION
 ========================= */
 
-.hero-section{
+.hero-section {
   position: relative;
   width: 100%;
   min-height: 100vh;
-
   overflow: hidden;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 25px 20px;
 }
-
 
 /* =========================
    BACKGROUND
 ========================= */
 
-.hero-background{
+.hero-background {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
 
-
-.bg-gradient{
+.bg-gradient {
   position: absolute;
   inset: 0;
-
   background:
     radial-gradient(circle at top, rgba(35,80,170,0.30), transparent 45%),
     radial-gradient(circle at bottom right, rgba(15,50,120,0.35), transparent 40%),
@@ -61,501 +54,302 @@ body{
     );
 }
 
-
 /* glow atas */
-
-.glow-1{
+.glow-1 {
   position: absolute;
-
   width: 240px;
   height: 240px;
-
   top: -80px;
   left: -80px;
-
   border-radius: 50%;
-
   background: rgba(70,120,255,0.15);
-
   filter: blur(90px);
 }
-
 
 /* glow kanan */
-
-.glow-2{
+.glow-2 {
   position: absolute;
-
   width: 200px;
   height: 200px;
-
   top: 45%;
   right: -90px;
-
   border-radius: 50%;
-
   background: rgba(80,140,255,0.10);
-
   filter: blur(90px);
 }
 
-
 /* glow bawah */
-
-.glow-3{
+.glow-3 {
   position: absolute;
-
   width: 220px;
   height: 220px;
-
   bottom: -100px;
   left: 50%;
-
   transform: translateX(-50%);
-
   border-radius: 50%;
-
   background: rgba(20,80,180,0.15);
-
   filter: blur(90px);
 }
 
 /* ==========================================
    ANIMASI BINTANG EMAS DIAGONAL (SHARP & CEAPAT)
-   ========================================== */
+========================================== */
 
-/* Base style bintang - BENTUK DIATUR DI SINI */
 .star {
   position: absolute;
-  /* Warna dasar Emas */
   background: #ffd700; 
-  
-  /* --- KODE UTAMA UNTUK BENTUK BINTANG TAJAM --- 
-     Menciptakan bintang segi empat yang tajam & simetris
-  */
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-
-  /* Efek kilauan emas yang kuat (di luar Clip-Path) */
   box-shadow: 0 0 10px #f39c12, 0 0 20px #d4af37, 0 0 30px #ffffff;
-  
-  /* Optional: Untuk memastikan pendaran box-shadow tidak terpotong 
-     (Kadang perlu pembungkus tambahan, tapi kita coba ini dulu) */
-  
   user-select: none;
   pointer-events: none;
   z-index: 1;
   opacity: 0;
-  
-  /* Memicu animasi meluncur diagonal */
   animation: bintangEmasMeluncur linear infinite;
 }
 
-/* Mengatur ukuran dan posisi asal (Kanan-Bawah) */
-.star-1 {
-  bottom: 10%;
-  right: 5%;
-  width: 15px; /* Menggunakan Width/Height sebagai ganti Font-Size */
-  height: 15px;
-  animation-duration: 2s; /* Sedikit dipercepat */
-  animation-delay: 0s;
-}
+.star-1 { bottom: 10%; right: 5%; width: 15px; height: 15px; animation-duration: 2s; animation-delay: 0s; }
+.star-2 { bottom: 25%; right: -5%; width: 25px; height: 25px; animation-duration: 2.8s; animation-delay: 0.8s; }
+.star-3 { bottom: -5%; right: 20%; width: 12px; height: 12px; animation-duration: 1.5s; animation-delay: 1.5s; }
+.star-4 { bottom: 40%; right: -10%; width: 20px; height: 20px; animation-duration: 3.2s; animation-delay: 0.3s; }
+.star-5 { bottom: 15%; right: 15%; width: 18px; height: 18px; animation-duration: 2.2s; animation-delay: 2s; }
 
-.star-2 {
-  bottom: 25%;
-  right: -5%;
-  width: 25px;
-  height: 25px;
-  animation-duration: 2.8s;
-  animation-delay: 0.8s;
-}
-
-.star-3 {
-  bottom: -5%;
-  right: 20%;
-  width: 12px;
-  height: 12px;
-  animation-duration: 1.5s; /* Paling cepat */
-  animation-delay: 1.5s;
-}
-
-.star-4 {
-  bottom: 40%;
-  right: -10%;
-  width: 20px;
-  height: 20px;
-  animation-duration: 3.2s;
-  animation-delay: 0.3s;
-}
-
-.star-5 {
-  bottom: 15%;
-  right: 15%;
-  width: 18px;
-  height: 18px;
-  animation-duration: 2.2s;
-  animation-delay: 2s;
-}
-
-/* --- LOGIK GERAKAN DIAGONAL & KEDIP (TETAP SAMA, CEAPAT) --- 
-   Bergerak cepat dari Kanan-Bawah (-X, +Y) menuju Kiri-Atas (-X, -Y)
-*/
 @keyframes bintangEmasMeluncur {
-  0% {
-    opacity: 0;
-    /* Mulai dari posisi asalnya di kanan bawah */
-    transform: translate(0, 0) scale(0.4) rotate(0deg);
-  }
-  20% {
-    opacity: 1; /* Berkedip terang */
-  }
-  40% {
-    opacity: 0.4; /* Meredup sebentar */
-  }
-  60% {
-    opacity: 1; /* Terang lagi */
-  }
-  90% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 0; /* Menghilang halus di ujung tujuan */
-    /* Meluncur jauh ke arah kiri atas (-X dan -Y) */
-    transform: translate(-700px, -700px) scale(1.1) rotate(120deg);
-  }
+  0% { opacity: 0; transform: translate(0, 0) scale(0.4) rotate(0deg); }
+  20% { opacity: 1; }
+  40% { opacity: 0.4; }
+  60% { opacity: 1; }
+  90% { opacity: 0.9; }
+  100% { opacity: 0; transform: translate(-700px, -700px) scale(1.1) rotate(120deg); }
 }
 
 /* =========================
    FLOWER
 ========================= */
 
-.hero-flower{
+.hero-flower {
   position: absolute;
   z-index: 2;
 }
 
-
 /* posisi bunga kiri bawah */
-
-.flower-left{
-  bottom: -1px; /* posisi bawah */
-  left: 1px; /* posisi kiri */
-
+.flower-left {
+  bottom: -1px;
+  left: 1px;
   top: auto;
 }
 
-/* KODE BARU: Mengatur posisi bunga sebelah kanan atas */
+/* posisi bunga kanan atas */
 .flower-right {
-top: -8px;
+  top: -8px;
   right: 1px;
-  /* Jika kamu menggunakan gambar yang sama dengan bunga kiri, 
-     kamu bisa membaliknya secara horizontal dengan kode di bawah ini: */
   transform: rotate(180deg); 
-
   z-index: 10;
 }
 
-
-
-
-
-.hero-flower img{
-  width: 200px; /* ukuran bunga */
-
+.hero-flower img {
+  width: 45vw; /* Diubah ke satuan viewport (vw) agar responsif mengikuti ukuran layar */
+  max-width: 200px; /* Batas maksimal ukuran agar tidak kebesaran di tablet/layar besar */
   opacity: 0.9;
 }
-
-
 
 /* =========================
    MAIN CONTENT
 ========================= */
 
-.hero-content{
+.hero-content {
   position: relative;
   z-index: 5;
-
   width: 100%;
-  max-width: 300px; /* lebar content */
-
+  max-width: 320px; /* Lebar content disesuaikan agar pas di layar HP */
   text-align: center;
 }
-
-
 
 /* =========================
    TOP TEXT
 ========================= */
 
-.hero-top{
+.hero-top {
   margin-bottom: 24px;
 }
 
-
-.hero-welcome{
+.hero-welcome {
   font-size: 11px;
-
   letter-spacing: 3px;
   text-transform: uppercase;
-
   margin-bottom: 8px;
-
   opacity: 0.85;
 }
 
-
-.hero-title{
+.hero-title {
   font-family: 'Cormorant Garamond', serif;
-
-  font-size: 34px; /* ukuran title */
-
+  font-size: 34px;
   line-height: 1.1;
   font-weight: 500;
-
   text-shadow: 0 4px 18px rgba(0,0,0,0.30);
 }
-
-
 
 /* =========================
    PHOTO FRAME
 ========================= */
 
-.hero-photo-wrapper{
+.hero-photo-wrapper {
   display: flex;
   justify-content: center;
-
   margin-bottom: 28px;
 }
 
-
 /* figura */
-
-.hero-photo-frame{
+.hero-photo-frame {
   position: relative;
-
-  width: 150px; /* ukuran figura */
+  width: 150px; 
   height: 225px;
-
   padding: 7px;
-
   border: 1px solid rgba(212,175,55,0.70);
-
-  border-radius:
-    90px 90px 18px 18px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.03),
-      rgba(255,255,255,0.01)
-    );
-
-  box-shadow:
-    0 5px 18px rgba(0,0,0,0.30),
-    0 0 8px rgba(212,175,55,0.08);
+  border-radius: 90px 90px 18px 18px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  box-shadow: 0 5px 18px rgba(0,0,0,0.30), 0 0 8px rgba(212,175,55,0.08);
 }
-
 
 /* foto pasangan */
-
-.hero-photo-frame img{
+.hero-photo-frame img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
   object-position: center;
-
-  border-radius:
-    82px 82px 14px 14px;
+  border-radius: 82px 82px 14px 14px;
 }
-
-
 
 /* =========================
    COUPLE NAME
 ========================= */
 
-.hero-couple{
+.hero-couple {
   position: relative;
-
   width: 100%;
   min-height: 80px;
-
   margin-bottom: 28px;
 }
 
-
-/* nama pria */
-
-.couple-man{
+/* Diubah dari px ke % agar fluid dan tidak bertabrakan di layar kecil */
+.couple-man {
   position: absolute;
   top: 0;
-  left: -12px;
-  right:160px;
+  left: -4%;
+  right: 53%;
 }
 
-
-/* nama wanita */
-
-.couple-woman{
+.couple-woman {
   position: absolute;
-
   right: 0;
-  
-  left:130px;
+  left: 43%;
   bottom: 0;
 }
 
-
-/* simbol & */
-
-.couple-center{
+.couple-center {
   position: absolute;
-
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%);
-
   font-size: 34px;
-
   font-family: 'Cormorant Garamond', serif;
-
   color: rgba(212,175,55,0.95);
 }
 
-
-.couple-name{
+.couple-name {
   font-family: 'Cormorant Garamond', serif;
-
-  font-size: 30px; /* ukuran nama */
-
+  font-size: 30px; 
   font-weight: 500;
-
   text-shadow: 0 4px 15px rgba(0,0,0,0.30);
 }
-
-
 
 /* =========================
    SAVE THE DATE
 ========================= */
 
-.hero-bottom{
+.hero-bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
-.save-text{
+.save-text {
   font-size: 10px;
-
   letter-spacing: 4px;
   text-transform: uppercase;
-
   margin-bottom: 12px;
 }
 
-
-.wedding-date{
+.wedding-date {
   margin-bottom: 22px;
 }
 
-
-.wedding-date h3{
+.wedding-date h3 {
   font-size: 42px;
-
   font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
-
   line-height: 1;
 }
 
-
-.wedding-date span{
+.wedding-date span {
   display: block;
-
   margin-top: 6px;
-
   font-size: 11px;
   letter-spacing: 2px;
 }
-
-
 
 /* =========================
    BUTTON
 ========================= */
 
-.open-invitation{
+.open-invitation {
   border: 1px solid rgba(212,175,55,0.60);
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0.02)
-    );
-
+  background: linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
   color: #ffffff;
-
   padding: 11px 24px;
-
   border-radius: 999px;
-
   cursor: pointer;
-
   transition: 0.3s ease;
-
-  box-shadow:
-    0 4px 14px rgba(0,0,0,0.25),
-    0 0 8px rgba(212,175,55,0.08);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 8px rgba(212,175,55,0.08);
 }
 
-
-.open-invitation span{
+.open-invitation span {
   font-size: 10px;
-
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-
-.open-invitation:hover{
+.open-invitation:hover {
   transform: translateY(-2px);
 }
 
-
 /* ==========================================
    EFEK ANIMASI BUKA GERBANG (HERO)
-   ========================================== */
+========================================== */
 
 .hero-section {
-  position: fixed; /* Ubah ke fixed agar saat gerbang terbuka, dia tidak memakan space scroll */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 999; /* Memastikan hero menutupi section ayat sebelum dibuka */
+  z-index: 999; 
   overflow: hidden;
-  transition: visibility 1.5s; /* Menghilangkan section setelah animasi selesai */
+  transition: visibility 1.5s; 
 }
 
-/* Base style untuk panel gerbang */
 .gate-panel {
   position: absolute;
   top: 0;
-  width: 50%; /* Membagi layar menjadi 2 (kiri & kanan) */
+  width: 50%; 
   height: 100%;
-  background-color: #0B1325; /* Warna Navy dasar gerbang */
-  transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1); /* Gerakan transisi halus */
+  background-color: #0B1325; 
+  transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1); 
   overflow: hidden;
 }
 
 .gate-left {
   left: 0;
-  border-right: 1px solid rgba(214, 175, 55, 0.2); /* Garis emas tipis di tengah pertemuan gerbang */
+  border-right: 1px solid rgba(214, 175, 55, 0.2); 
 }
 
 .gate-right {
@@ -563,43 +357,35 @@ top: -8px;
   border-left: 1px solid rgba(214, 175, 55, 0.2);
 }
 
-/* Pastikan konten utama ikut memudar saat gerbang terbuka */
 .hero-content {
   position: relative;
   z-index: 1000;
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* ------------------------------------------
-   CLASS TRIGGER (DIJALANKAN LEWAT JAVASCRIPT)
-   ------------------------------------------ */
+.hero-section.buka-gerbang .gate-left { transform: translateX(-100%); }
+.hero-section.buka-gerbang .gate-right { transform: translateX(100%); }
+.hero-section.buka-gerbang .hero-content { opacity: 0; transform: scale(0.9); pointer-events: none; }
+.hero-section.buka-gerbang { visibility: hidden; pointer-events: none; }
 
-/* Gerbang Kiri Geser ke Kiri Luar Layar */
-.hero-section.buka-gerbang .gate-left {
-  transform: translateX(-100%);
-}
 
-/* Gerbang Kanan Geser ke Kanan Luar Layar */
-.hero-section.buka-gerbang .gate-right {
-  transform: translateX(100%);
-}
-
-/* Konten teks & foto memudar lalu menghilang */
-.hero-section.buka-gerbang .hero-content {
-  opacity: 0;
-  transform: scale(0.9);
-  pointer-events: none;
-}
-
-/* Hilangkan total hero section dari layar setelah gerbang terbuka */
-.hero-section.buka-gerbang {
-  visibility: hidden;
-  pointer-events: none;
-}
-
-/* Berikan padding-top pada body agar Section Ayat tidak tertutup status fixed Hero */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #0B1325;
+/* ==========================================
+   MEDIA QUERY (KHUSUS LAYAR HP KECIL)
+   Agar tidak tabrakan di layar < 380px (cth: iPhone SE)
+========================================== */
+@media (max-width: 380px) {
+  .hero-title { font-size: 28px; }
+  
+  .hero-photo-frame {
+    width: 130px; 
+    height: 195px; 
+  }
+  
+  .couple-name { font-size: 24px; }
+  
+  .couple-center { font-size: 28px; }
+  
+  .wedding-date h3 { font-size: 34px; }
+  
+  .hero-couple { min-height: 65px; margin-bottom: 20px; }
 }
