@@ -108,44 +108,40 @@ body {
     box-shadow: inset 0 0 15px rgba(191, 149, 63, 0.3), 0 0 20px rgba(191, 149, 63, 0.2);
 }
 
+
 /* ==========================================================================
-   REVISI: ORNAMEN BUNGA EMAS LUXURY (CONDONG KE TENGAH)
+   PENGATURAN ORNAMEN GAMBAR PNG (CONDONG KE TENGAH)
    ========================================================================== */
 .ornament-corner {
     position: absolute;
-    width: 85px;  /* Ukuran proporsional untuk dekorasi bunga */
-    height: 85px;
-    background-size: contain;
-    background-repeat: no-repeat;
+    width: 85px;       /* Atur besar ukuran gambar bunga di sini */
+    height: auto;      /* Biar tinggi gambar proporsional mengikuti lebar */
     z-index: 4;
-    
-    /* 1 KODE SVG UNTUK SEMUA: Desain kelopak bunga mawar/lotus mewah dengan kombinasi warna emas */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C!-- Kelopak Daun/Garis Sulur Luar --%3E%3Cpath d='M50,95 C15,75 20,40 35,45 C10,30 35,10 50,35 C65,10 90,30 65,45 C80,40 85,75 50,95 Z' fill='%23bf953f' stroke='%23fcf6ba' stroke-width='1'/%3E%3C!-- Kelopak Bunga Utama di Tengah --%3E%3Cpath d='M50,45 C35,55 42,80 50,95 C58,80 65,55 50,45 Z' fill='%23d4af37' stroke='%23ffffff' stroke-width='0.8'/%3E%3C!-- Detail Serat Emas Inti Bunga --%3E%3Cpath d='M30,65 Q50,55 70,65 M35,75 Q50,65 65,75' fill='none' stroke='%23fcf6ba' stroke-width='1'/%3E%3Ccircle cx='50' cy='45' r='3' fill='%23ffffff'/%3E%3C/svg%3E");
+    display: block;
 }
 
-/* Mengatur posisi di pojok dan memutar arah bunga (rotate) 
-   agar semuanya condong/miring tepat menghadap ke pusat tengah undangan
-*/
+/* Mengatur posisi sudut dan memutar (rotate) gambar PNG 
+   agar semuanya miring/condong pas menghadap ke pusat tengah */
 .top-left {
     top: -15px;
     left: -15px;
-    transform: rotate(135deg); /* Miring ke kanan bawah */
+    transform: rotate(135deg); 
 }
 
 .top-right {
     top: -15px;
     right: -15px;
-    transform: rotate(-135deg); /* Miring ke kiri bawah */
+    transform: rotate(-135deg); 
 }
 
 .bottom-left {
     bottom: -15px;
     left: -15px;
-    transform: rotate(45deg); /* Miring ke kanan atas */
+    transform: rotate(45deg); 
 }
 
 .bottom-right {
     bottom: -15px;
     right: -15px;
-    transform: rotate(-45deg); /* Miring ke kiri atas */
+    transform: rotate(-45deg); 
 }
