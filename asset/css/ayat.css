@@ -53,7 +53,7 @@
 /* Mengatur 4 Gambar Hiasan Sudut */
 .corner-decor {
   position: absolute;
-  width: 70px; /* Atur ukuran hiasan bungamu di sini */
+  width: 76px; /* Atur ukuran hiasan bungamu di sini */
   height: auto;
   pointer-events: none;
 }
@@ -61,24 +61,32 @@
 .top-left {
   top: 10px;
   left: 10px;
+  transform: rotate(-90deg);
+  z-index: 1px;
 }
 
 .top-right {
   top: 10px;
   right: 10px;
-  transform: scaleX(-1); /* Balik horizontal */
+   /* Balik horizontal */
 }
 
 .bottom-left {
   bottom: 10px;
-  left: 10px;
-  transform: scaleY(-1); /* Balik vertikal */
+  left: 2px;
+  transform: rotate(-180deg)
 }
 
 .bottom-right {
   bottom: 10px;
-  right: 10px;
-  transform: rotate(180deg); /* Putar balik total */
+  right: 2px;
+  transform: rotate(90deg)
+}
+
+/* Konten Teks & Tipografi */
+.ayat-content {
+  text-align: center;
+  color: #f1f5f9;
 }
 
 /* Konten Teks & Tipografi */
