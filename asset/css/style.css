@@ -135,20 +135,23 @@ body{
 /* posisi bunga kiri bawah */
 
 .flower-left{
-  bottom: -10px; /* posisi bawah */
-  left: -10px; /* posisi kiri */
+  bottom: -1px; /* posisi bawah */
+  left: 1px; /* posisi kiri */
 
   top: auto;
 }
 
 /* KODE BARU: Mengatur posisi bunga sebelah kanan atas */
 .flower-right {
-  top: 0;
-  right: 0;
+  top: 1px;
+  right: -23px;
   /* Jika kamu menggunakan gambar yang sama dengan bunga kiri, 
      kamu bisa membaliknya secara horizontal dengan kode di bawah ini: */
-  transform: scaleX(-1); 
+  transform: rotate(180deg); 
+
+  z-index: 10;
 }
+
 
 
 
