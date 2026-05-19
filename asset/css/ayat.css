@@ -45,13 +45,14 @@
     z-index: 2; /* Di atas background, di bawah teks */
 }
 
+
 /* Koordinat posisi bunga di ujung-ujung tepi layar */
-.ayat-section .decor-top-left { top: 15px; left: 15px; }
-.ayat-section .decor-top-right { top: 15px; right: 15px; }
-.ayat-section .decor-bottom-left { bottom: 15px; left: 15px; }
-.ayat-section .decor-bottom-right { bottom: 15px; right: 15px; }
-.ayat-section .decor-mid-left { top: 50%; left: -10px; transform: translateY(-50%); }
-.ayat-section .decor-mid-right { top: 50%; right: -10px; transform: translateY(-50%); }
+.ayat-section .decor-top-left { top: -40px; left: -40px; transform: rotate(145deg) }
+.ayat-section .decor-top-right { top: -40px; right: -40px; transform: rotate(-145deg) }
+.ayat-section .decor-bottom-left { bottom: -55px; left: -40px; transform: rotate(45deg) } 
+.ayat-section .decor-bottom-right { bottom: -55px; right: -40px; transform: rotate(-45deg) } 
+.ayat-section .decor-mid-left { top: 50; left: -20px; transform: rotate(50deg) }
+.ayat-section .decor-mid-right { top: 350px; right: -20px; transform: rotate(-50deg); }
 
 /* Pembungkus Teks di Tengah Layar */
 .ayat-section .ayat-container {
