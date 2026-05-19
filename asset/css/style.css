@@ -185,12 +185,12 @@ body, html {
 
 
 /* ==========================================================================
-   9. GEROMBOLAN BURUNG KECIL DI SUDUT
+   9. GEROMBOLAN BURUNG KECIL DI SUDUT (DENGAN ANIMASI)
    ========================================================================== */
 .birds-corner {
     position: absolute;
     
-    /* POSISI DI SUDUT (Bisa kamu ganti top/right/left/bottom) */
+    /* POSISI DI SUDUT */
     top: 40px;
     right: px;
     
@@ -198,7 +198,41 @@ body, html {
     width: 120px; 
     height: auto;
     
-    z-index: 2; /* Di atas background, di bawah teks */
-    opacity: 0.4; /* Dibikin samar agar terlihat sangat jauh di latar belakang */
-    pointer-events: none; /* Supaya tidak mengganggu klik di layar */
+    z-index: 2;
+    opacity: 0.4; /* Efek samar karena jauh */
+    pointer-events: none;
+    
+    /* MENJALANKAN ANIMASI BERGELOMBANG & KEPAK */
+    animation: birdHover 6s ease-in-out infinite alternate;
+}
+
+/* Efek kepakan sayap untuk masing-masing burung di dalam SVG */
+.birds-corner path {
+    transform-origin: center;
+    animation: birdFlap 0.4s ease-in-out infinite alternate;
+}
+
+/* Penundaan waktu kepak agar gerakan burung tidak kompak (lebih alami) */
+.birds-corner path:nth-child(2) { animation-delay: 0.1s; }
+.birds-corner path:nth-child(3) { animation-delay: 0.2s; }
+.birds-corner path:nth-child(4) { animation-delay: 0.15s; }
+
+/* Animasi 1: Gerakan melayang naik turun halus di sudut */
+@keyframes birdHover {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        transform: translateY(-8px) translateX(-5px); /* Bergerak sedikit ke kiri atas */
+    }
+}
+
+/* Animasi 2: Efek mengepakkan sayap kecil */
+@keyframes birdFlap {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(0.4); /* Mengkerut vertikal seolah sayap menutup */
+    }
 }
