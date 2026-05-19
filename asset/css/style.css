@@ -48,7 +48,7 @@ body, html {
         to bottom, 
         rgba(244, 240, 234, 0.2) 30%, 
         rgba(244, 240, 234, 0.85) 75%, 
-        rgba(244, 240, 234, 0.98) 100__
+        rgba(244, 240, 234, 0.98) 100%
     );
     z-index: 1; /* Di atas foto, di bawah teks */
 }
