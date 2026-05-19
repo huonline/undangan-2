@@ -62,13 +62,14 @@ body, html {
     width: 130px; /* Atur ukuran besar/kecilnya bunga di sini */
     height: auto;
     z-index: 2; /* Di atas overlay gradasi */
-    opacity: 0.7; /* Tingkat transparansi bunga */
+    opacity: 0.6; /* Tingkat transparansi bunga */
 }
 
 /* Posisi Bunga Kiri Atas */
 .deco-top-left {
-    top: 10px;
-    left: 10px;
+    top: -16px;
+    left: -16px;
+    transform: rotate(90deg)
 }
 
 /* Posisi Bunga Kanan Atas */
@@ -80,15 +81,17 @@ body, html {
 
 /* Posisi Bunga Kiri Bawah */
 .deco-bottom-left {
-    bottom: 20px;
-    left: 10px;
+    bottom: -16px;
+    left: -16px;
 }
 
 /* Posisi Bunga Kanan Bawah */
 .deco-bottom-right {
-    bottom: 20px;
-    right: 10px;
+    bottom: -20px;
+    right: -16px;
+    transform: rotate(-90deg)
 }
+
 
 /* ==========================================================================
    5. KONTEN TEKS & TOMBOL
