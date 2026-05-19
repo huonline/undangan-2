@@ -3,18 +3,18 @@
 ========================== */
 .hero-section{
   position: relative;
-  min-height: 100vh;
   width: 100%;
+  min-height: 100vh;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #f4e7d7;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   isolation: isolate;
 }
 
 /* =========================
-   BACKGROUND LAYERS
+   BACKGROUND
 ========================== */
 .hero-bg{
   position: absolute;
@@ -22,71 +22,47 @@
   z-index: 0;
 }
 
-/* Gambar konsep bagian atas */
 .hero-bg-image{
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 70%;
+  height: 55%;
   background-image: url('img/background-konsep.jpg');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  filter: saturate(0.95) brightness(0.92);
   transform: scale(1.02);
+  filter: saturate(0.95) brightness(0.9);
 }
 
-/* Cream bagian bawah */
 .hero-bg-cream{
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 38%;
+  height: 50%;
   background: linear-gradient(180deg, #f7ecdf 0%, #f0e1cf 100%);
 }
 
-/* Overlay agar gambar dan cream menyatu */
 .hero-bg-overlay{
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(8, 17, 31, 0.15) 0%, rgba(8, 17, 31, 0.02) 40%, rgba(247, 236, 223, 0.08) 72%, rgba(240, 225, 207, 0.35) 100%);
+    linear-gradient(
+      180deg,
+      rgba(7, 17, 31, 0.08) 0%,
+      rgba(7, 17, 31, 0.02) 28%,
+      rgba(247, 236, 223, 0.08) 55%,
+      rgba(240, 225, 207, 0.36) 100%
+    );
   z-index: 1;
 }
 
-/* Blur lembut */
-.hero-bg-blur{
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(55px);
-  opacity: 0.28;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.blur-1{
-  width: 260px;
-  height: 260px;
-  background: rgba(255, 255, 255, 0.35);
-  top: 10%;
-  left: 8%;
-}
-
-.blur-2{
-  width: 320px;
-  height: 320px;
-  background: rgba(255, 214, 170, 0.28);
-  bottom: 12%;
-  right: 6%;
-}
-
-/* Gelombang pemisah */
 .hero-wave{
   position: absolute;
   left: 0;
-  bottom: 30%;
+  top: 48%;
   width: 100%;
   height: 180px;
   z-index: 2;
@@ -94,93 +70,19 @@
 }
 
 .hero-wave path{
-  fill: rgba(247, 236, 223, 0.95);
-  filter: drop-shadow(0 -8px 20px rgba(255,255,255,0.25));
+  fill: rgba(247, 236, 223, 0.98);
+  filter: drop-shadow(0 -10px 22px rgba(255,255,255,0.22));
 }
 
 /* =========================
-   PANEL GERBANG
-========================== */
-.gate-panel{
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  z-index: 3;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.gate-left{
-  left: 0;
-}
-
-.gate-right{
-  right: 0;
-}
-
-/* =========================
-   BUNGA / DEKORASI
-========================== */
-.hero-flower{
-  position: absolute;
-  z-index: 4;
-  opacity: 0.95;
-}
-
-.hero-flower img{
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.12));
-}
-
-.flower-left{
-  left: -10px;
-  top: 18px;
-  width: 170px;
-}
-
-.flower-right{
-  right: -10px;
-  top: 18px;
-  width: 170px;
-  transform: scaleX(-1);
-}
-
-/* =========================
-   STARS
-========================== */
-.star{
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: rgba(255,255,255,0.85);
-  border-radius: 50%;
-  box-shadow: 0 0 14px rgba(255,255,255,0.65);
-  z-index: 4;
-  animation: twinkle 2.8s infinite ease-in-out;
-}
-
-.star-1{ top: 18%; right: 12%; animation-delay: 0s; }
-.star-2{ top: 26%; right: 22%; animation-delay: .3s; }
-.star-3{ top: 42%; right: 15%; animation-delay: .6s; }
-.star-4{ top: 55%; right: 26%; animation-delay: .9s; }
-.star-5{ top: 70%; right: 10%; animation-delay: 1.2s; }
-
-@keyframes twinkle{
-  0%,100%{ transform: scale(1); opacity: .55; }
-  50%{ transform: scale(1.5); opacity: 1; }
-}
-
-/* =========================
-   HERO CONTENT
+   CONTENT
 ========================== */
 .hero-content{
   position: relative;
-  z-index: 5;
+  z-index: 3;
   width: min(92%, 560px);
-  padding: 32px 20px 42px;
+  padding: 24px 20px 48px;
+  margin-bottom: clamp(18px, 4vh, 42px);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -189,63 +91,18 @@
 }
 
 .hero-top{
-  margin-top: 12px;
-}
-
-.hero-welcome{
-  margin: 0 0 6px;
-  font-size: 1rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #7b6449;
-  font-weight: 500;
+  margin: 0;
 }
 
 .hero-title{
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(2rem, 4vw, 3.3rem);
   line-height: 1.1;
   color: #2b1f17;
   font-family: "Georgia", serif;
-  text-shadow: 0 3px 18px rgba(255,255,255,0.35);
+  text-shadow: 0 3px 18px rgba(255,255,255,0.34);
 }
 
-/* =========================
-   PHOTO FRAME
-========================== */
-.hero-photo-wrapper{
-  width: min(68vw, 290px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-photo-frame{
-  width: 100%;
-  aspect-ratio: 1 / 1.18;
-  border-radius: 180px 180px 24px 24px;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.34);
-  border: 1px solid rgba(255,255,255,0.55);
-  box-shadow:
-    0 18px 40px rgba(60, 40, 20, 0.14),
-    inset 0 1px 0 rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
-  overflow: hidden;
-}
-
-.hero-photo-frame img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 170px 170px 18px 18px;
-  display: block;
-}
-
-/* =========================
-   COUPLE NAME
-========================== */
 .hero-couple{
   display: flex;
   align-items: center;
@@ -256,7 +113,7 @@
 
 .couple-name{
   margin: 0;
-  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  font-size: clamp(1.25rem, 2.8vw, 2rem);
   color: #2f2319;
   font-family: "Georgia", serif;
   font-weight: 600;
@@ -276,9 +133,6 @@
   box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
-/* =========================
-   BOTTOM CONTENT
-========================== */
 .hero-bottom{
   display: flex;
   flex-direction: column;
@@ -354,33 +208,24 @@
   }
 
   .hero-bg-image{
-    height: 66%;
+    height: 52%;
     background-position: center top;
   }
 
   .hero-bg-cream{
-    height: 42%;
+    height: 52%;
   }
 
   .hero-wave{
-    bottom: 28%;
+    top: 45%;
     height: 130px;
   }
 
   .hero-content{
     width: min(94%, 420px);
     gap: 16px;
-    padding: 24px 14px 34px;
-  }
-
-  .flower-left,
-  .flower-right{
-    width: 120px;
-    top: 10px;
-  }
-
-  .hero-photo-wrapper{
-    width: min(66vw, 240px);
+    padding: 18px 14px 34px;
+    margin-bottom: 22px;
   }
 
   .wedding-date h3{
@@ -393,13 +238,12 @@
     font-size: 1.85rem;
   }
 
-  .hero-welcome,
   .save-text{
     font-size: .82rem;
   }
 
   .couple-name{
-    font-size: 1.15rem;
+    font-size: 1.12rem;
   }
 
   .open-invitation{
