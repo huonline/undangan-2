@@ -1,35 +1,106 @@
-<section id="ayat" class="ayat-section">
+/* ==========================================================================
+   SECTION AYAT (KHUSUS TEMA KREM & MINIMALIS)
+   ========================================================================== */
 
-  <div class="ayat-background">
-    <div class="glow-center"></div>
-  </div>
+/* Container Utama Section */
+.ayat-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: #fafd96; /* Warna dasar krem lembut */
+    overflow: hidden;
+}
 
-  <div class="ayat-container">
-    
-    <img src="img/dekorasi.png" alt="Dekorasi Bunga" class="ayat-decor decor-top-left">
-    <img src="img/dekorasi.png" alt="Dekorasi Bunga" class="ayat-decor decor-top-right">
-    <img src="img/dekorasi.png" alt="Dekorasi Bunga" class="ayat-decor decor-bottom-left">
-    <img src="img/dekorasi.png" alt="Dekorasi Bunga" class="ayat-decor decor-bottom-right">
-    <img src="img/dekorasi.png" alt="Dekorasi Bunga" class="ayat-decor decor-mid-left">
-    <img src="img/dekorasi.png" alt="Dekorasi Bunga" class="ayat-decor decor-mid-right">
+/* Background & Efek Cahaya */
+.ayat-section .ayat-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
 
-    <div class="ayat-content">
-      
-      <div class="bismillah">
-        بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
-      </div>
+.ayat-section .glow-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(250, 246, 238, 0) 70%);
+    pointer-events: none;
+}
 
-      <p class="arabic-text">
-        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
-      </p>
+/* Pembungkus Konten (Dibuat agak kecil dan presisi di tengah) */
+.ayat-section .ayat-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 450px; /* Ukuran box diperkecil agar teks padat di tengah */
+    padding: 40px 30px;
+    text-align: center;
+}
 
-      <p class="indonesian-translation">
-        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
-      </p>
+/* Pengaturan Umum untuk 6 Dekorasi Bunga */
+.ayat-section .ayat-decor {
+    position: absolute;
+    width: 70px; /* Ukuran bunga disesuaikan agar tidak terlalu mencolok */
+    height: auto;
+    opacity: 0.7;
+}
 
-      <span class="surah-title">QS. Ar-Rum: 21</span>
+/* Atur Posisi Masing-masing 6 Bunga */
+.ayat-section .decor-top-left { top: 0; left: 0; }
+.ayat-section .decor-top-right { top: 0; right: 0; }
+.ayat-section .decor-bottom-left { bottom: 0; left: 0; }
+.ayat-section .decor-bottom-right { bottom: 0; right: 0; }
+.ayat-section .decor-mid-left { top: 50%; left: -20px; transform: translateY(-50%); }
+.ayat-section .decor-mid-right { top: 50%; right: -20px; transform: translateY(-50%); }
 
-    </div>
-  </div>
+/* Gaya Teks Konten Ayat */
+.ayat-section .ayat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-</section>
+/* Font Bismillah */
+.ayat-section .bismillah {
+    font-size: 1.3rem;
+    color: #5c5043;
+    font-weight: 500;
+}
+
+/* Font Teks Arab */
+.ayat-section .arabic-text {
+    font-family: 'Amiri', serif; /* Font arab bawaan atau bisa pakai font system */
+    font-size: 1.5rem;
+    line-height: 2.2;
+    color: #3d352c;
+    direction: rtl; /* Memastikan teks arab dibaca dari kanan ke kiri */
+    padding: 0 10px;
+}
+
+/* Font Terjemahan Indonesia */
+.ayat-section .indonesian-translation {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #6e6151;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Font Nama Surah */
+.ayat-section .surah-title {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #8c7b67;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
