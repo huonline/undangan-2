@@ -2,7 +2,7 @@
    SECTION AYAT (KHUSUS TEMA KREM & MINIMALIS)
    ========================================================================== */
 
-/* Container Utama Section */
+/* Container Utama Section (Layar penuh) */
 .ayat-section {
     position: relative;
     width: 100%;
@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     padding: 60px 20px;
-    background-color: #fafd96; /* Warna dasar krem lembut */
+    background-color: #fafd96; /* Warna krem lembut */
     overflow: hidden;
 }
 
@@ -36,33 +36,34 @@
     pointer-events: none;
 }
 
-/* Pembungkus Konten (Dibuat agak kecil dan presisi di tengah) */
+/* Pengaturan 6 Dekorasi Bunga Langsung Menempel di Pinggiran Layar */
+.ayat-section .ayat-decor {
+    position: absolute;
+    width: 80px; /* Ukuran bunga */
+    height: auto;
+    opacity: 0.7;
+    z-index: 2; /* Di atas background, di bawah teks */
+}
+
+/* Koordinat posisi bunga di ujung-ujung tepi layar */
+.ayat-section .decor-top-left { top: 15px; left: 15px; }
+.ayat-section .decor-top-right { top: 15px; right: 15px; }
+.ayat-section .decor-bottom-left { bottom: 15px; left: 15px; }
+.ayat-section .decor-bottom-right { bottom: 15px; right: 15px; }
+.ayat-section .decor-mid-left { top: 50%; left: -10px; transform: translateY(-50%); }
+.ayat-section .decor-mid-right { top: 50%; right: -10px; transform: translateY(-50%); }
+
+/* Pembungkus Teks di Tengah Layar */
 .ayat-section .ayat-container {
     position: relative;
-    z-index: 2;
+    z-index: 3; /* Lapisan paling atas agar tidak tertutup bunga */
     width: 100%;
-    max-width: 450px; /* Ukuran box diperkecil agar teks padat di tengah */
-    padding: 40px 30px;
+    max-width: 450px; 
+    padding: 20px;
     text-align: center;
 }
 
-/* Pengaturan Umum untuk 6 Dekorasi Bunga */
-.ayat-section .ayat-decor {
-    position: absolute;
-    width: 70px; /* Ukuran bunga disesuaikan agar tidak terlalu mencolok */
-    height: auto;
-    opacity: 0.7;
-}
-
-/* Atur Posisi Masing-masing 6 Bunga */
-.ayat-section .decor-top-left { top: 0; left: 0; }
-.ayat-section .decor-top-right { top: 0; right: 0; }
-.ayat-section .decor-bottom-left { bottom: 0; left: 0; }
-.ayat-section .decor-bottom-right { bottom: 0; right: 0; }
-.ayat-section .decor-mid-left { top: 50%; left: -20px; transform: translateY(-50%); }
-.ayat-section .decor-mid-right { top: 50%; right: -20px; transform: translateY(-50%); }
-
-/* Gaya Teks Konten Ayat */
+/* Jarak antar elemen teks */
 .ayat-section .ayat-content {
     display: flex;
     flex-direction: column;
@@ -78,12 +79,10 @@
 
 /* Font Teks Arab */
 .ayat-section .arabic-text {
-    font-family: 'Amiri', serif; /* Font arab bawaan atau bisa pakai font system */
-    font-size: 1.5rem;
-    line-height: 2.2;
+    font-size: 1.6rem;
+    line-height: 2.3;
     color: #3d352c;
-    direction: rtl; /* Memastikan teks arab dibaca dari kanan ke kiri */
-    padding: 0 10px;
+    direction: rtl;
 }
 
 /* Font Terjemahan Indonesia */
@@ -102,5 +101,4 @@
     font-weight: 600;
     color: #8c7b67;
     text-transform: uppercase;
-    margin-top: 5px;
 }
