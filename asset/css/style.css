@@ -30,7 +30,7 @@ body, html {
     padding-bottom: 50px; /* Jarak konten dari bawah layar HP */
     
     /* PANGGIL FOTO PASANGAN DI SINI */
-    background: url('../../img/pasangan3.jpeg') no-repeat center center;
+    background: url('../../img/background3.jpeg') no-repeat center center;
     background-size: cover; /* Foto otomatis memenuhi layar tanpa distorsi */
 }
 
