@@ -59,10 +59,10 @@ body, html {
    ========================================================================== */
 .flower-deco {
     position: absolute;
-    width: 120px; /* Atur ukuran besar/kecilnya bunga di sini */
+    width: 130px; /* Atur ukuran besar/kecilnya bunga di sini */
     height: auto;
     z-index: 2; /* Di atas overlay gradasi */
-    opacity: 0.85; /* Tingkat transparansi bunga */
+    opacity: 0.7; /* Tingkat transparansi bunga */
 }
 
 /* Posisi Bunga Kiri Atas */
@@ -73,8 +73,9 @@ body, html {
 
 /* Posisi Bunga Kanan Atas */
 .deco-top-right {
-    top: 10px;
-    right: 10px;
+  top: -16px;
+    right: -20px;
+    transform: rotate(180deg);
 }
 
 /* Posisi Bunga Kiri Bawah */
