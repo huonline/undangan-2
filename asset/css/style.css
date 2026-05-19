@@ -191,8 +191,8 @@ body, html {
     position: absolute;
     
     /* POSISI DI SUDUT */
-    top: 40px;
-    right: px;
+    top: 100px;
+    left: 1px;
     
     /* UKURAN GEROMBOLAN (Makin kecil makin terlihat jauh) */
     width: 120px; 
