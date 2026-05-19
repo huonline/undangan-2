@@ -247,21 +247,30 @@
   }
 }
 
-@media (max-width: 480px){
-  .hero-title{
-    font-size: 1.85rem;
+
+
+/* =========================
+   FIX GELOMBANG MOBILE
+========================== */
+@media (max-width: 768px){
+
+  .hero-bg-image{
+    height: 52%;
   }
 
-  .save-text{
-    font-size: .82rem;
+  .hero-bg-cream{
+    height: 52%;
   }
 
-  .couple-name{
-    font-size: 1.12rem;
+  .hero-wave{
+    bottom: 46%;
+    height: 120px;
+    width: 100%;
   }
 
-  .open-invitation{
-    padding: 12px 22px;
-    font-size: .92rem;
+  .hero-wave path{
+    transform: scaleY(1.4);
+    transform-origin: center;
   }
+
 }
