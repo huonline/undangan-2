@@ -120,3 +120,97 @@ btnKonfirmasiTarik.addEventListener("click", () => {
     }
     prosesTarikTunai(nominal);
 });
+
+// --- Elemen DOM untuk Setor & NFC ---
+const btnSetor = document.getElementById("btnSetor");
+const modalSetor = document.getElementById("modalSetor");
+const btnBatalSetor = document.getElementById("btnBatalSetor");
+const btnKonfirmasiSetor = document.getElementById("btnKonfirmasiSetor");
+const inputNominalSetor = document.getElementById("inputNominalSetor");
+const btnScanNFC = document.getElementById("btnScanNFC");
+
+// --- Fitur Scan NFC (Tap KTP) ---
+btnScanNFC.addEventListener("click", async () => {
+    try {
+        // Cek apakah HP/Browser support Web NFC
+        if ("NDEFReader" in window) {
+            const ndef = new NDEFReader();
+            await ndef.scan();
+            alert("Sip! Sekarang tempelkan KTP/KTS ke belakang HP...");
+            
+            ndef.addEventListener("reading", ({ serialNumber }) => {
+                // Ambil nomor seri chip kartu dan bersihkan formatnya
+                const idKartu = serialNumber.replace(/:/g, "").toUpperCase();
+                inputKartuID.value = idKartu;
+                btnCekID.click(); // Otomatis jalankan fungsi Cari ID
+                alert("Kartu Terbaca: " + idKartu);
+            });
+        } else {
+            alert("Yah, Browser/HP ini tidak support fitur Web NFC. Coba pakai Google Chrome di Android.");
+        }
+    } catch (error) {
+        alert("Gagal mengaktifkan NFC: " + error);
+    }
+});
+
+// --- Fungsi 4: Setor Tunai ---
+async function prosesSetorTunai(nominal) {
+    if (!activeUserUID) {
+        alert("Pilih atau masukkan ID terlebih dahulu!");
+        return;
+    }
+
+    const walletRef = doc(db, "wallets", activeUserUID);
+    
+    try {
+        await runTransaction(db, async (transaction) => {
+            const walletDoc = await transaction.get(walletRef);
+            if (!walletDoc.exists()) {
+                throw "Data akun tidak ditemukan!";
+            }
+
+            const saldoSekarang = walletDoc.data().saldo;
+            // Tambah Saldo
+            const saldoBaru = saldoSekarang + nominal;
+            transaction.update(walletRef, { saldo: saldoBaru, updatedAt: serverTimestamp() });
+
+            // Catat Transaksi
+            const transRef = doc(collection(db, "transactions"));
+            transaction.set(transRef, {
+                uid: activeUserUID,
+                type: "setor_tunai",
+                amount: nominal,
+                timestamp: serverTimestamp(),
+                status: "berhasil"
+            });
+        });
+
+        alert("Setor tunai berhasil!");
+        modalSetor.classList.add("hidden");
+        inputNominalSetor.value = "";
+        fetchSaldo(activeUserUID); // Refresh saldo
+
+    } catch (error) {
+        alert("Gagal Setor: " + error);
+    }
+}
+
+// --- Event Listeners Setor Modal ---
+btnSetor.addEventListener("click", () => {
+    if (!activeUserUID) {
+        alert("Silakan masukkan ID KTP/KTS dan klik Cari dulu!");
+        return;
+    }
+    modalSetor.classList.remove("hidden");
+});
+
+btnBatalSetor.addEventListener("click", () => modalSetor.classList.add("hidden"));
+
+btnKonfirmasiSetor.addEventListener("click", () => {
+    const nominal = parseInt(inputNominalSetor.value);
+    if (!nominal || nominal <= 0) {
+        alert("Masukkan nominal yang benar!");
+        return;
+    }
+    prosesSetorTunai(nominal);
+});
