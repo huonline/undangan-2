@@ -8,10 +8,15 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- Header -->
+        <!-- Head<!-- Header & Input ID Card -->
+        <!-- Header & Input ID Card -->
         <header>
             <h1>KTS Bank</h1>
-            <p id="userName">Halo, Memuat...</p>
+            <div class="id-input-box" style="margin-top: 15px;">
+                <input type="text" id="inputKartuID" placeholder="Masukkan ID KTP / KTS..." style="width: 70%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+                <button id="btnCekID" style="width: 25%; padding: 8px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">Cari</button>
+            </div>
+            <p id="userName" style="margin-top: 10px;">ID Aktif: <strong id="displayID">-</strong></p>
         </header>
 
         <!-- Saldo Card -->
