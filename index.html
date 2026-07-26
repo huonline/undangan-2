@@ -10,15 +10,17 @@
     <div class="app-container">
         <!-- Head<!-- Header & Input ID Card -->
         <!-- Header & Input ID Card -->
-        <header>
+      <header>
             <h1>KTS Bank</h1>
             <div class="id-input-box" style="margin-top: 15px;">
                 <input type="text" id="inputKartuID" placeholder="Masukkan ID KTP / KTS..." style="width: 70%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
                 <button id="btnCekID" style="width: 25%; padding: 8px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">Cari</button>
             </div>
+            <!-- Tombol NFC Baru -->
+            <button id="btnScanNFC" style="width: 100%; padding: 10px; background: #8e44ad; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; font-weight: bold;">💳 Tap KTP/KTS (NFC)</button>
+            
             <p id="userName" style="margin-top: 10px;">ID Aktif: <strong id="displayID">-</strong></p>
         </header>
-
         <!-- Saldo Card -->
         <div class="balance-card">
             <p>Saldo Tersedia</p>
